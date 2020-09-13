@@ -20,8 +20,8 @@ exports.reader = (line) => {
     if (type[7] == "1") hitObject["type"] = "maniaHold";
 
     if (!hitObject["type"]) {
-        console.log("Invalid hitobject type, aborting...");
-        process.exit(1);
+        console.log("Invalid hitobject type, skipping object.");
+        return;
     }
 
     if (type[2] == "1") { //New combo
