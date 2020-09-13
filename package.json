@@ -1,0 +1,17 @@
+{
+  "name": "osu-map-to-json",
+  "version": "1.0.0",
+  "description": "Converts an osu! beatmap to a json file.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "osu",
+    "beatmap",
+    "converter",
+    "json"
+  ],
+  "author": "Tom.bat",
+  "license": "ISC"
+}
