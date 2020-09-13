@@ -48,7 +48,7 @@ exports.reader = (line) => {
 
     hitObject["objectParams"] = {};
     
-    console.dir(hitObject);
+    //console.dir(hitObject);
 
     this.data[this.data.length] = hitObject;
 }
