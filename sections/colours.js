@@ -5,7 +5,7 @@ exports.data = {};
 
 exports.reader = (line) => {
     let splitData = line.split(" : ");
-    let colourValues = splitData[1].split(",")
+    let colourValues = splitData[1].split(",");
 
     for (let i = 0; i < colourValues.length; i++) {
         colourValues[i] = parseInt(colourValues[i]);
@@ -13,9 +13,9 @@ exports.reader = (line) => {
 
     if (splitData[0].startsWith("Combo")) {
         if (!this.data["Combos"]) this.data["Combos"] = [];
-        this.data["Combos"][this.data["Combos"].length] = colourValues
+        this.data["Combos"][this.data["Combos"].length] = colourValues;
         return;
     }
 
-    this.data[splitData[0]] = colourValues
+    this.data[splitData[0]] = colourValues;
 }
