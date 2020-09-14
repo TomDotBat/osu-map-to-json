@@ -1,14 +1,12 @@
 
 const fs = require("fs");
 
-let sectionHandlers = {}
+let sectionHandlers = {};
 
 fs.readdirSync("./sections", {encoding: "utf-8"}).forEach(fileName => {
     let handler = require("./sections/" + fileName);
     sectionHandlers[handler.name] = handler;
 });
-
-console.log(sectionHandlers)
 
 let filePath = process.argv[2];
 
@@ -30,7 +28,7 @@ if (!fileData) {
 }
 
 const splitData = fileData.split("\n");
-console.log("Found " + splitData.length + " lines in the specified file, converting..")
+console.log("Found " + splitData.length + " lines in the specified file, converting..");
 
 let sectionName = "";
 let beatmapData = {};
@@ -44,14 +42,14 @@ splitData.forEach(line => {
             console.log(sectionHandlers[sectionName].data);
         }
 
-        sectionName = line.substring(1, line.length - 2)
+        sectionName = line.substring(1, line.length - 2);
 
         if (!sectionHandlers[sectionName]) {
             console.log("Encountered invalid section name \"" + sectionName + "\", aborting.");
             process.exit(1);
         }
-        
-        console.log(sectionName + " section found.")
+
+        console.log(sectionName + " section found.");
         return;
     }
 
